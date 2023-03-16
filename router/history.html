@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <a href="/home">首页</a>
+      <a href="/about">关于</a>
+    </div>
+    <div class="router-view"></div>
+
+    <script>
+      const routerView = document.querySelector(".router-view");
+
+      const aEls = document.querySelectorAll("a");
+      for (const el of aEls) {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          const href = el.getAttribute("href");
+          // 前两个参数基本没啥用
+          history.pushState({}, "", href);
+          changeUrl();
+        });
+      }
+
+      window.addEventListener("popstate", changeUrl);
+      window.addEventListener("go", changeUrl);
+
+      function changeUrl() {
+        switch (location.pathname) {
+          case "/home":
+            routerView.innerHTML = "HOME";
+            break;
+          case "/about":
+            routerView.innerHTML = "About";
+            break;
+          default:
+            routerView.innerHTML = "";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

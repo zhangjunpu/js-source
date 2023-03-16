@@ -1,0 +1,22 @@
+{
+  "name": "js-source",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangjunpu/js-source.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangjunpu/js-source/issues"
+  },
+  "homepage": "https://github.com/zhangjunpu/js-source#readme",
+  "description": "",
+  "type": "module"
+}
